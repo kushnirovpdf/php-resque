@@ -1,9 +1,8 @@
 <?php
 
-//add fatal handler
-$fatalHandler = __DIR__ . '/../../../../../fatal.php';
-if (file_exists($fatalHandler)) {
-	include_once $fatalHandler;
+//init before execute resque job
+if (function_exists('init_resque_job')) {
+	init_resque_job();
 }
 
 /**
